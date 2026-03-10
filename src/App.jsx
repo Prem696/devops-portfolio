@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+const BASE = import.meta.env.BASE_URL;
 
 const projects = [
   {
@@ -16,11 +17,11 @@ const projects = [
     "Built scalable, event-driven automation without managing servers"
    ],
     images: [
-    "/ebs1.png",
-    "/ebs2.png",
-    "/ebs3.png",
-    "/ebs4.png",
-    "/ebs5.png",
+    `${BASE}ebs1.png`,
+    `${BASE}ebs2.png`,
+    `${BASE}ebs3.png`,
+    `${BASE}ebs4.png`,
+    `${BASE}ebs5.png`,
    ],
     color: "from-blue-500 to-cyan-400",
   },
@@ -38,14 +39,14 @@ const projects = [
     "Ensured HTTPS-only secure access"
    ],
     images: [
-        "/project1.png",
-        "/project1-2.png",
-        "/project1-3.png",
-        "/project1-4.png",
-        "/project1-5.png",
-        "/project1-6.png",
-        "/project1-7.png",
-        "/project1-8.png",
+        `${BASE}project1.png`,
+        `${BASE}project1-2.png`,
+        `${BASE}project1-3.png`,
+        `${BASE}project1-4.png`,
+        `${BASE}project1-5.png`,
+        `${BASE}project1-6.png`,
+        `${BASE}project1-7.png`,
+        `${BASE}project1-8.png`,
       ],
     color: "from-purple-500 to-pink-400",
   },
@@ -62,14 +63,14 @@ const projects = [
      "Enabled HTTPS delivery through CloudFront",
      "Automated backend setup using EC2 user-data scripts"
     ],
-    images: ["/project3.png", 
-      "/project3-2.png",
-      "/project3-3.png",
-      "/project3-4.png",
-      "/project3-5.png",
-      "/project3-6.png",
-      "/project3-7.png",
-      "/project3-8.png"
+    images: [`${BASE}project3.png`, 
+      `${BASE}project3-2.png`,
+      `${BASE}project3-3.png`,
+      `${BASE}project3-4.png`,
+      `${BASE}project3-5.png`,
+      `${BASE}project3-6.png`,
+      `${BASE}project3-7.png`,
+      `${BASE}project3-8.png`,
     ],
     color: "from-orange-500 to-yellow-400",
   },
@@ -86,13 +87,14 @@ const projects = [
      "Validated real-time load balancing using instance ID responses",
      "Ensured performance, fault tolerance, and cost optimization"
     ],
-    images: ["/ha1.png",
-      "/ha2.png",
-      "/ha3.png",
-      "/ha4.png",
-      "/ha5.png",
-      "/ha6.png",
-      "/ha7.png",
+    images: [`${BASE}ha1.png`,
+      `${BASE}ha2.png`,
+      `${BASE}ha3.png`,
+      `${BASE}ha4.png`,
+      `${BASE}ha5.png`,
+      `${BASE}ha6.png`,
+      `${BASE}ha7.png`,
+  
     ],
     color: "from-green-500 to-emerald-400",
   },
@@ -140,7 +142,7 @@ const changeProject = (i) => {
       
       {/* ✅ Full screen background image */}
       <img
-        src="/loader-img.png"
+        src={`${BASE}loader.gif`}
         alt="Loading"
         className="absolute inset-0 w-full h-full object-cover blur-sm scale-105"
       />
@@ -152,7 +154,7 @@ const changeProject = (i) => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
 
         {/* 🔄 Spinner */}
-        <img src="/loader.gif" className="w-20 h-20" />
+        <img src={`${BASE}loader.gif`} className="w-20 h-20" />
 
         {/* ✨ Animated text */}
         <p className="mt-6 text-xl font-semibold animate-pulse">
@@ -187,7 +189,7 @@ const changeProject = (i) => {
   {/* ✅ Full Background Image */}
 <div className="absolute inset-0 z-0">
   <img
-    src="/background1.png"   // ✅ FIXED
+    src={`${BASE}background1.png`}   // ✅ FIXED
     alt="hero background"
     className="w-full h-full object-cover"
   />
@@ -245,7 +247,7 @@ const changeProject = (i) => {
 
   {/* Right Side Profile Image */}
   <motion.img
-  src="/profile.jpg"
+  src={`${BASE}profile.jpg`}
   alt="profile"
   initial={{ opacity: 0, scale: 0.8 }}
   animate={{ opacity: 1, scale: 1 }}
@@ -468,7 +470,7 @@ const changeProject = (i) => {
         org: "Forage",
         issued: "Dec 2025",
         id: "fv73RRcSjh6uKNCsH",
-        logo: "/theforage_logo.jpg",
+        logo: `${BASE}theforage_logo.jpg`,
         link: "https://www.theforage.com/completion-certificates/pmnMSL4QiQ9JCgE3W/kkE9HyeNcw6rwCRGw_pmnMSL4QiQ9JCgE3W_694ae02d351b4e5608056995_1766516618859_completion_certificate.pdf" // add actual link if available
       },
       {
@@ -476,7 +478,7 @@ const changeProject = (i) => {
         org: "GeeksforGeeks",
         issued: "2025",
         id: "N/A",
-        logo: "/forage.png",
+        logo: `${BASE}forage.png`,
         link: "https://media.geeksforgeeks.org/courses/certificates/ca00345db5b3d3ea88bb843251b7f9f8.pdf" // add actual link if available
       },
       {
@@ -484,7 +486,7 @@ const changeProject = (i) => {
         org: "Intellipaat",
         issued: "Dec 2025",
         id: "31679-1655-307518",
-        logo: "/intellipaat-logo.png",
+        logo: `${BASE}intellipaat-logo.png`,
         link: "https://intellipaat.com/academy/certificate-link/?Yz0xNjU1JnU9MzA3NTE4JmV4dD0x"
       }
     ].map((cert, i) => (
@@ -539,7 +541,7 @@ const changeProject = (i) => {
     {/* BTech */}
     <div className="bg-slate-900 p-6 rounded-2xl border border-slate-700 hover:border-sky-500 transition shadow-lg flex flex-col md:flex-row gap-6 items-center">
       <img
-        src="/tgpcet-logo.png"
+        src={`${BASE}tgpcet-logo.png`}
         alt="TGPCET Logo"
         className="w-20 h-20 object-contain bg-white p-2 rounded-xl"
       />
@@ -559,7 +561,7 @@ const changeProject = (i) => {
     {/* Diploma */}
     <div className="bg-slate-900 p-6 rounded-2xl border border-slate-700 hover:border-sky-500 transition shadow-lg flex flex-col md:flex-row gap-6 items-center">
       <img
-        src="/diploma-logo.png"
+        src={`${BASE}diploma-logo.png`}
         alt="NIT Logo"
         className="w-20 h-20 object-contain bg-white p-2 rounded-xl"
       />
@@ -579,7 +581,7 @@ const changeProject = (i) => {
     {/* School */}
     <div className="bg-slate-900 p-6 rounded-2xl border border-slate-700 hover:border-sky-500 transition shadow-lg flex flex-col md:flex-row gap-6 items-center">
       <img
-        src="/school-logo.png"
+        src={`${BASE}school-logo.png`}
         alt="Charisma Logo"
         className="w-20 h-20 object-contain bg-white p-2 rounded-xl"
       />
